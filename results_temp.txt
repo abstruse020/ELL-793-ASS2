@@ -1,0 +1,95 @@
+
+for part 1
+using droupout, without normalization
+Accuracy of the network on the 10000 test images: 96.97 %
+
+Part 1b L2 -------------------
+
+Epoch [124/250], Step [100/391], Loss: 0.0001
+Epoch [124/250], Step [200/391], Loss: 0.0001
+Epoch [124/250], Step [300/391], Loss: 0.0005
+Accuracy of the network on the 10000 test images: 98.34 
+
+at about 50 epochs we got the required results
+
+
+
+
+--------------Part 2b (a)-------------- 
+the model gets trained at about 6-7th epoch itself
+
+although we continued training till 50 pochs
+Epoch 47/49
+----------
+train Loss: 0.8141 Acc: 0.7765
+val Loss: 0.8913 Acc: 0.7620
+
+Epoch 48/49
+----------
+train Loss: 0.8221 Acc: 0.7741
+val Loss: 0.8733 Acc: 0.7715
+
+Epoch 49/49
+----------
+train Loss: 0.8271 Acc: 0.7751
+val Loss: 0.9069 Acc: 0.7626
+
+Training complete in 54m 42s
+Best val Acc: 0.792100
+
+
+
+
+--------------Part 2c-------------- without data augmentation
+learning_rate = 10e-3
+num_epochs = 50
+optimizer = optim.Adam(resnet18_c.parameters(), lr = learning_rate)
+criterion = nn.CrossEntropyLoss()
+Epoch 49/49
+----------
+train Loss: 0.9348 Acc: 0.6706
+val Loss: 1.4359 Acc: 0.5212
+
+Epoch 45/49
+----------
+train Loss: 1.0201 Acc: 0.6424
+val Loss: 1.3640 Acc: 0.5297
+
+Training complete in 28m 36s
+Best val Acc: 0.529700
+-------------- END --------------
+
+--------------Part 2c-------------- with data augmentation
+
+learning_rate = 10e-3
+num_epochs = 150
+Epoch 149/149
+----------
+train Loss: 0.6006 Acc: 0.7860
+val Loss: 1.3408 Acc: 0.5917
+
+Training complete in 85m 20s
+Best val Acc: 0.592400
+
+--------------Part 2c-------------- with data augmentation latest
+epochs = 10+10
+Epoch 9/9
+----------
+train Loss: 1.2758 Acc: 0.5430
+val Loss: 1.3677 Acc: 0.5077
+
+epochs = 30
+Epoch 9/9
+----------
+train Loss: 0.9491 Acc: 0.6654
+val Loss: 1.2301 Acc: 0.5773
+
+epochs = 50
+
+Epoch 19/19
+----------
+train Loss: 0.3238 Acc: 0.8868
+val Loss: 1.3062 Acc: 0.6481
+
+Training complete in 11m 33s
+Best val Acc: 0.661400
